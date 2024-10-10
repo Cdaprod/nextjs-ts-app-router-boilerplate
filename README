@@ -1,0 +1,14 @@
+```text
+nextjs-ts-app-router/
+├── Dockerfile
+├── package.json
+├── tsconfig.json
+├── app/
+│   ├── layout.tsx
+│   └── page.tsx
+├── public/
+│   └── favicon.ico
+└── .github/
+    └── workflows/
+        └── ci.yml
+```
