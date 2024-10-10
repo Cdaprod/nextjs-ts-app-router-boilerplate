@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nextjs:
+    build: .
+    ports:
+      - "3000:3000"  # Expose port 3000 for the app
+    volumes:
+      - .:/app  # Bind mount the current directory to /app in the container
+      - /app/node_modules  # Prevent bind-mounting node_modules to the host
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true

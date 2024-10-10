@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nextjs-app:
+    build: .
+    ports:
+      - "${PORT}:${PORT}"  # Using PORT from .env file
+    volumes:
+      - .:/app  # Bind mount the local project directory to /app in the container
+      - /app/node_modules  # Prevent bind-mounting node_modules to the host
+    environment:
+      - NODE_ENV=${NODE_ENV}  # Injecting NODE_ENV from .env file
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}  # Example of using an API URL
+      - SECRET_API_KEY=${SECRET_API_KEY}  # Server-side secret variable
+    stdin_open: true
+    tty: true
